@@ -1,38 +1,125 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: rgb(252, 252, 252);
+  background-color: rgb(37, 37, 38);
 }
 
-.App-link {
-  color: #61dafb;
+/* Form Styling */
+.Field {
+  width: 400px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Note-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.Note-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 100vh;
+  width: 720px;
+}
+
+.Note-header {
+  display: flex;
+  height: 40%;
+  margin-top: -10px;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.Note-title {
+  text-align: start;
+  line-height: 80%;
+  margin: 7px 0 0 7px;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Note-image-thumbnail {
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  border-radius: 0 25px 0 0;
+}
+
+.Note {
+  flex-grow: 1;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 5px;
+  height: 175px;
+  width: 175px;
+  max-width: 47%;
+}
+
+.Note-body {
+  height: 48%;
+  width: 100%;
+  margin: 0;
+  text-align: start;
+  line-height: 90%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* button styling */
+.Button-style {
+ border: none;
+}
+
+.Button-space {
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: rgb(252, 252, 252);
+}
+
+.Delete {
+  background-color: rgb(59, 59, 59); 
+}
+
+.Save {
+  background-color: rgb(59, 59, 59); 
+}
+
+.Upload {
+  background-color: rgb(59, 59, 59); 
+}
+
+/* sticky colors */
+.Orange {
+  background-color: rgb(225, 206, 113);
+}
+
+.Red {
+  background-color: rgb(255, 167, 137);
+}
+
+.Green {
+  background-color: rgb(213, 231, 124);
+}
+
+.Purple {
+  background-color: rgb(184, 126, 249); 
+}
+
+.Blue {
+  background-color: rgb(98, 225, 238); 
 }
