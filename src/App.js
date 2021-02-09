@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>Sticky Notes</h1>
       <div className="Note-form Purple">
       <div className="Note-header">
       <input
