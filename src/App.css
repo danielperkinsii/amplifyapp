@@ -8,28 +8,64 @@
 }
 
 /* Form Styling */
-.Field {
-  width: 400px;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+.Name-field {
+  padding: 0 0 0 18px;
+  margin-top: -18px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  color: rgb(252, 252, 252);
+  text-align: start;
+  word-wrap: break-word;
+  line-height: 90%;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Description-field {
+  margin-left: 10px;
+  width: 95%;
+  height: 43%;
+  padding: 0;
+  font-size: 15px;
+  border: none;
+  color: rgb(252, 252, 252);
+  line-height: 90%;
 }
 
 .Note-form {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+  flex-grow: 1;
+  border-radius: 25px;
+  margin: 5px;
+  height: 200px;
+  width: 230px;
+  overflow: hidden;
+  position: relative;
+}
+
+::placeholder {
+  color: rgb(252, 252, 252);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: rgb(252, 252, 252);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: rgb(252, 252, 252);
 }
 
 .Note-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
   min-height: 100vh;
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
 }
 
 .Note-header {
@@ -42,9 +78,12 @@
 
 .Note-title {
   text-align: start;
-  line-height: 80%;
+  line-height: 90%;
   margin: 7px 0 0 7px;
   width: 50%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -85,10 +124,17 @@
 }
 
 .Button-space {
-  font-size: 15px;
-  padding: 10px 20px;
+  padding: 5px 15px;
   border-radius: 25px;
   color: rgb(252, 252, 252);
+}
+
+.Image-button {
+  margin-left: -18px;
+  padding-top: 20px;
+  text-align: center;
+  width: 50%;
+  height: 75%;
 }
 
 .Delete {
@@ -96,14 +142,20 @@
 }
 
 .Save {
-  background-color: rgb(59, 59, 59); 
+  background-color: rgb(59, 59, 59);
+  margin-left: 10px; 
 }
 
-.Upload {
-  background-color: rgb(59, 59, 59); 
+.Filter-white {
+  filter: invert(94%) sepia(54%) saturate(2%) hue-rotate(357deg) brightness(107%) contrast(98%);
 }
+
 
 /* sticky colors */
+.Gray {
+  background-color: rgb(59, 59, 59);
+}
+
 .Orange {
   background-color: rgb(225, 206, 113);
 }
