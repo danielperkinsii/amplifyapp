@@ -3,8 +3,9 @@ import './App.css';
 import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
-import { createNote as createNoteMutation, deleteNote, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import ListOfNotes from './components/ListOfNotes.js'
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import ListOfNotes from './components/ListOfNotes'
+import NewNoteForm from './components/NewNoteForm'
 
 const initialFormState = { name: '', description: ''};
 
