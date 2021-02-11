@@ -1,3 +1,9 @@
+/*
+TODO: fix form sizing
+TODO: button spacing on notes
+TODO: fix focus on buttons
+*/
+
 .App {
   display: flex;
   flex-direction: column;

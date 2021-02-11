@@ -7,11 +7,8 @@ import {updateNote as updateNoteMutation, deleteNote as deleteNoteMutation } fro
 import ListOfNotes from './components/ListOfNotes'
 import NewNoteForm from './components/NewNoteForm'
 
-const initialFormState = { name: '', description: ''};
-
 function App() {
   const [notes, setNotes] = useState([]);
-  const [currentFormData, setCurrentFormData] = useState(initialFormState)
 
   useEffect(() => {
     fetchNotes();
@@ -30,10 +27,10 @@ function App() {
     setNotes(apiData.data.listNotes.items);
   }
 
-  async function updateNote({ id }) {
-    const noteToUpdate = notes.filter(note => note.id === id);
-    setCurrentFormData(noteToUpdate[0])
-    await API.graphql({ query: updateNoteMutation, variables: { input: { currentFormData } } })
+  async function updateNote(id, updatedNote) {
+    const updatedNotesArray = notes.map(note => note.id === id ? updatedNote : note);
+    setNotes(updatedNotesArray)
+    await API.graphql({ query: updateNoteMutation, variables: { input: { 'id': id, 'name': updatedNote.name, 'description': updatedNote.description } } })
   }
 
   async function deleteNote({ id }) {
@@ -46,7 +43,7 @@ function App() {
     <div className="App">
       <h1>Sticky Notes</h1>
       <NewNoteForm notes={notes} setNotes={setNotes} fetchNotes={fetchNotes}/>
-      <ListOfNotes notes={notes} deleteNote={deleteNote}/>
+      <ListOfNotes notes={notes} updateNote={updateNote} deleteNote={deleteNote}/>
       <AmplifySignOut />
     </div>
   );
